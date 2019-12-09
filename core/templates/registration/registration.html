@@ -1,0 +1,83 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .reg-table tr {
+            padding: 10px;
+        }
+        .reg-table tr td{
+            padding-top: 10px;
+            padding-left: 15px;
+        }
+        .reg-table tr .f-errors{
+            color: red;
+        }
+    </style>
+
+    <h1>Регистрация</h1>
+    form >><br>
+    <form method="post" action="{% url 'registration' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="reg-table">
+            <tr>
+                <td class="f-label">{{ form.cart_number.label }}</td>
+                <td class="f-field">{{ form.cart_number }}</td>
+                <td class="f-errors">{{ form.cart_number.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.password1.label }}</td>
+                <td class="f-field">{{ form.password1 }}</td>
+                <td class="f-errors">{{ form.password1.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.first_name.label }}</td>
+                <td class="f-field">{{ form.first_name }}</td>
+                <td class="f-errors">{{ form.name.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.last_name.label }}</td>
+                <td class="f-field">{{ form.last_name }}</td>
+                <td class="f-errors">{{ form.surname.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.date_birth.label }}</td>
+                <td class="f-field">{{ form.date_birth }}</td>
+                <td class="f-errors">{{ form.date_birth.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.place_birth.label }}</td>
+                <td class="f-field">{{ form.place_birth }}</td>
+                <td class="f-errors">{{ form.place_birth.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.passport_series.label }}</td>
+                <td class="f-field">{{ form.passport_series }}</td>
+                <td class="f-errors">{{ form.cart_number.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.registration_office.label }}</td>
+                <td class="f-field">{{ form.registration_office }}</td>
+                <td class="f-errors">{{ form.registration_office.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.cart_type.label }}</td>
+                <td class="f-field">{{ form.cart_type }}</td>
+                <td class="f-errors">{{ form.cart_type.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.refer.label }}</td>
+                <td class="f-field">{{ form.refer }}</td>
+                <td class="f-errors">{{ form.refer.errors }}</td>
+            </tr>
+            <tr>
+                <td class="f-label">{{ form.image.label }}</td>
+                <td class="f-field">{{ form.image }}</td>
+                <td class="f-errors">{{ form.image.errors }}</td>
+            </tr>
+        </table>
+        <button type="submit" style="background-color: #701e6e; color: white; width: 200px; height: 50px; margin-left: 100px; margin-top: 50px">Зарегистрироваться</button>
+    </form>
+    <br><br><br><br>
+
+{% endblock %}

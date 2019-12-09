@@ -13,6 +13,21 @@
 
 </head>
 <body>
+    <div style="background-color: #d2daef;">
+        {% if not user.is_authenticated %}
+            <div style="display: flex; justify-content: space-between; padding: 1em; box-sizing: border-box; width: 500px; margin-left: 100px">
+                <h2><a href="{% url 'index' %}">Главная</a><a href="{% url 'login' %}" style="margin-left: 50px">Вход</a></h2>
+                <h2><a href="{% url 'registration' %}">Регистрация</a></h2>
+            </div>
+        {% else %}
+            <div style="display: flex; justify-content: space-between; padding: 1em; box-sizing: border-box; width: 500px; margin-left: 100px">
+                <h2><a href="{% url 'index' %}">Главная</a></h2>
+                <h2 style="margin-left: 20px;"><a href="{% url 'profile' %}"><b>ЛК: {{ user }}</b></a></h2>
+                {% if user.is_superuser %}<h3 style="margin-left: 20px;"><a href="/admin/">админка</a></h3>{% endif %}
+                <h3 style="margin-left: 20px;"><a href="{% url 'logout' %}">Выход из системы</a></h3>
+            </div>
+        {% endif %}
+    </div>
     <div>
         {% block content %}
         {% endblock %}

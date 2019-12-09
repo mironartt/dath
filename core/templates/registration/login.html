@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div style="margin-top: 100px; margin-left: 100px">
+        <form method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div>
+                <label for="username">
+                    Введите логин:
+                </label>
+                <input type="text" id="username" name="username" placeholder="логин" />
+            </div>
+            <div>
+                <label for="password">
+                    Введите пароль:
+                </label>
+                <input type="password" name="password" type="password" placeholder="пароль" style="margin-left: 20px" />
+            </div>
+            <br>
+            <input type="submit" value="Войти" style="margin-left: 20px" />
+
+        </form>
+    </div>
+
+{% endblock %}

@@ -104,7 +104,7 @@ venv.bak/
 .mypy_cache/
 
 
-
+dath/local_settings.py
 uwsgi_params
 nginx.conf
 mysite_nginx.conf
@@ -112,3 +112,4 @@ mysite_uwsgi.ini
 mysite.sock
 libattery.sock
 notes.txt
+notes.py

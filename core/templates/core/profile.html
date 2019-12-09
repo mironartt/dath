@@ -1,0 +1,68 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>Profile</h1>
+    <table>
+        <tr>
+            <td><b>login:</b></td>
+            <td>{{ user }}</td>
+        </tr>
+        <tr>
+            <td><b>ref_id:</b></td>
+            <td>{{ user.ref_id }}</td>
+        </tr>
+        <tr>
+            <td><b>cart_number:</b></td>
+            <td>{{ user.cart_number }}</td>
+        </tr>
+        <tr>
+            <td><b>first_name:</b></td>
+            <td>{{ user.first_name }}</td>
+        </tr>
+        <tr>
+            <td><b>last_name:</b></td>
+            <td>{{ user.last_name }}</td>
+        </tr>
+        <tr>
+            <td><b>date_birth:</b></td>
+            <td>{{ user.date_birth }}</td>
+        </tr>
+        <tr>
+            <td><b>place_birth:</b></td>
+            <td>{{ user.place_birth }}</td>
+        </tr>
+        <tr>
+            <td><b>passport_series:</b></td>
+            <td>{{ user.passport_series}}</td>
+        </tr>
+        <tr>
+            <td><b>registration_office:</b></td>
+            <td>{{ user.registration_office }}</td>
+        </tr>
+        <tr>
+            <td><b>cart_type:</b></td>
+            <td>(id: {{ user.cart_type.id }}) {{ user.cart_type.get_name }}</td>
+        </tr>
+        <tr>
+            <td><b>refer:</b></td>
+            <td>(id: {{ user.refer.id }}) login: {{ user.refer }}</td>
+        </tr>
+        <tr>
+            <td><b>date_joined:</b></td>
+            <td>{{ user.date_joined }}</td>
+        </tr>
+        <tr>
+            <td><b>id in data base:</b></td>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <td><b>last_login:</b></td>
+            <td>{{ user.last_login  }}</td>
+        </tr>
+        <tr>
+            <td><b>image:</b></td>
+            <td>{% if user.image %}<img src="{{ user.image.url }}" style="max-width: 150px; max-height: 150px" />{% else %}-{% endif %}</td>
+        </tr>
+    </table>
+{% endblock %}

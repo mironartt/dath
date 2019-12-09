@@ -109,3 +109,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static_public')
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+
+
+AUTH_USER_MODEL = "core.User"
+# UPLOAD_IMAGES_PATH = BASE_DIR + '/public/images/'
